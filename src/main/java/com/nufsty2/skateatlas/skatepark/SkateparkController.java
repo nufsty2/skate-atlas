@@ -16,7 +16,7 @@ public class SkateparkController {
     }
 
     @GetMapping("/skateparks/all")
-    public @ResponseBody Iterable<Skatepark> getAllSkateparks() {
+    public Iterable<Skatepark> getAllSkateparks() {
         return skateparks.findAll();
     }
 
