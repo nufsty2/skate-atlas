@@ -5,177 +5,168 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
 public class Skatepark {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    
-    private String name;
 
-    private Boolean lights;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 
-    private Boolean free;
+	private String name;
 
-    private Boolean inside;
+	private Boolean lights;
 
-    private String surface;
+	private Boolean free;
 
-    private String address;
+	private Boolean inside;
 
-    private Integer postalCode;
+	private String surface;
 
-    private String city;
+	private String address;
 
-    private String country;
+	private Integer postalCode;
 
-    private String state;
+	private String city;
 
-    private String website;
+	private String country;
 
-    public Skatepark() {}
+	private String state;
 
+	private String website;
 
-    public Skatepark(String name, Boolean lights, Boolean free, Boolean inside, String surface, String address, Integer postalCode, String city, String country, String state, String website) {
-        this.name = name;
-        this.lights = lights;
-        this.free = free;
-        this.inside = inside;
-        this.surface = surface;
-        this.address = address;
-        this.postalCode = postalCode;
-        this.city = city;
-        this.country = country;
-        this.state = state;
-        this.website = website;
-    }
-    
+	public Skatepark() {
+	}
 
-    public Integer getId() {
-        return this.id;
-    }
+	public Skatepark(String name, Boolean lights, Boolean free, Boolean inside, String surface, String address,
+			Integer postalCode, String city, String country, String state, String website) {
+		this.name = name;
+		this.lights = lights;
+		this.free = free;
+		this.inside = inside;
+		this.surface = surface;
+		this.address = address;
+		this.postalCode = postalCode;
+		this.city = city;
+		this.country = country;
+		this.state = state;
+		this.website = website;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Integer getId() {
+		return this.id;
+	}
 
-    public String getName() {
-        return this.name;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return this.name;
+	}
 
-    public Boolean isLights() {
-        return this.lights;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public Boolean getLights() {
-        return this.lights;
-    }
+	public Boolean isLights() {
+		return this.lights;
+	}
 
-    public void setLights(Boolean lights) {
-        this.lights = lights;
-    }
+	public Boolean getLights() {
+		return this.lights;
+	}
 
-    public Boolean isFree() {
-        return this.free;
-    }
+	public void setLights(Boolean lights) {
+		this.lights = lights;
+	}
 
-    public Boolean getFree() {
-        return this.free;
-    }
+	public Boolean isFree() {
+		return this.free;
+	}
 
-    public void setFree(Boolean free) {
-        this.free = free;
-    }
+	public Boolean getFree() {
+		return this.free;
+	}
 
-    public Boolean isInside() {
-        return this.inside;
-    }
+	public void setFree(Boolean free) {
+		this.free = free;
+	}
 
-    public Boolean getInside() {
-        return this.inside;
-    }
+	public Boolean isInside() {
+		return this.inside;
+	}
 
-    public void setInside(Boolean inside) {
-        this.inside = inside;
-    }
+	public Boolean getInside() {
+		return this.inside;
+	}
 
-    public String getSurface() {
-        return this.surface;
-    }
+	public void setInside(Boolean inside) {
+		this.inside = inside;
+	}
 
-    public void setSurface(String surface) {
-        this.surface = surface;
-    }
+	public String getSurface() {
+		return this.surface;
+	}
 
-    public String getAddress() {
-        return this.address;
-    }
+	public void setSurface(String surface) {
+		this.surface = surface;
+	}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+	public String getAddress() {
+		return this.address;
+	}
 
-    public Integer getPostalCode() {
-        return this.postalCode;
-    }
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-    public void setPostalCode(Integer postalCode) {
-        this.postalCode = postalCode;
-    }
+	public Integer getPostalCode() {
+		return this.postalCode;
+	}
 
-    public String getCity() {
-        return this.city;
-    }
+	public void setPostalCode(Integer postalCode) {
+		this.postalCode = postalCode;
+	}
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+	public String getCity() {
+		return this.city;
+	}
 
-    public String getCountry() {
-        return this.country;
-    }
+	public void setCity(String city) {
+		this.city = city;
+	}
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+	public String getCountry() {
+		return this.country;
+	}
 
-    public String getState() {
-        return this.state;
-    }
+	public void setCountry(String country) {
+		this.country = country;
+	}
 
-    public void setState(String state) {
-        this.state = state;
-    }
+	public String getState() {
+		return this.state;
+	}
 
-    public String getWebsite() {
-        return this.website;
-    }
+	public void setState(String state) {
+		this.state = state;
+	}
 
-    public void setWebsite(String website) {
-        this.website = website;
-    }
+	public String getWebsite() {
+		return this.website;
+	}
 
-    @Override
-    public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", name='" + getName() + "'" +
-            ", lights='" + isLights() + "'" +
-            ", free='" + isFree() + "'" +
-            ", inside='" + isInside() + "'" +
-            ", surface='" + getSurface() + "'" +
-            ", address='" + getAddress() + "'" +
-            ", postal_code='" + getPostalCode() + "'" +
-            ", city='" + getCity() + "'" +
-            ", country='" + getCountry() + "'" +
-            ", state='" + getState() + "'" +
-            ", website='" + getWebsite() + "'" +
-            "}";
-    }
+	public void setWebsite(String website) {
+		this.website = website;
+	}
+
+	@Override
+	public String toString() {
+		return "{" + " id='" + getId() + "'" + ", name='" + getName() + "'" + ", lights='" + isLights() + "'"
+				+ ", free='" + isFree() + "'" + ", inside='" + isInside() + "'" + ", surface='" + getSurface() + "'"
+				+ ", address='" + getAddress() + "'" + ", postal_code='" + getPostalCode() + "'" + ", city='"
+				+ getCity() + "'" + ", country='" + getCountry() + "'" + ", state='" + getState() + "'" + ", website='"
+				+ getWebsite() + "'" + "}";
+	}
 
 }
