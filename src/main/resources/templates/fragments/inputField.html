@@ -10,7 +10,7 @@
 						<div th:switch="${type}">
 							<input th:case="'text'" class="form-control" type="text" th:field="*{__${name}__}" />
 							<input th:case="'state'" class="form-control" type="text" th:field="*{__${name}__}"
-							placeholder="UT" title="Enter the two character state code" pattern="[A-Z]{2}"/>
+							placeholder="AA" title="Enter the two character state code" pattern="[A-Z]{2}"/>
 							<input th:case="'website'" class="form-control" type="text" th:field="*{__${name}__}"
 							placeholder="http://" title="Include http:// or https://" pattern="[http][s]?.+"/>
 						</div>
