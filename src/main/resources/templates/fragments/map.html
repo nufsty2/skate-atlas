@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<th:block th:fragment="map">
+		<title>Add Map</title>
+		<style type="text/css">
+			/* Set the size of the div element that contains the map */
+			#map {
+				height: 400px;
+				/* The height is 400 pixels */
+				width: 100%;
+				/* The width is the width of the web page */
+			}
+		</style>
+		<script>
+			// Initialize and add the map
+			function initMap() {
+				// Dummy location
+				const dummy = { lat: 0, lng: 0 };
+				// The map, centered at address
+				const map = new google.maps.Map(document.getElementById("map"), {
+					zoom: 20,
+					center: dummy,
+					mapTypeId: 'satellite'
+				});
+				// The marker, positioned at address
+				const geocoder = new google.maps.Geocoder();
+				geocodeAddress(geocoder, map);
+			}
+
+			function geocodeAddress(geocoder, resultsMap) {
+				const address = document.getElementById("address").getAttribute("value");
+				const city = document.getElementById("city").getAttribute("value");
+				const state = document.getElementById("state").getAttribute("value");
+				const country = document.getElementById("country").getAttribute("value");
+				const completeAddress = `${address}, ${city}, ${state}, ${country}`;
+				geocoder.geocode({ address: completeAddress }, (results, status) => {
+					if (status === "OK") {
+						resultsMap.setCenter(results[0].geometry.location);
+						new google.maps.Marker({
+							map: resultsMap,
+							position: results[0].geometry.location,
+						});
+					} else {
+						alert("Geocode was not successful for the following reason: " + status);
+					}
+				});
+			}
+		</script>
+	</th:block>
+</head>
+<body>
+	<h3>Skatepark Location</h3>
+	<!--The div element for the map -->
+	<div id="map"></div>
+	<div id="address" th:value="${skatepark.address}"></div>
+	<div id="city" th:value="${skatepark.city}"></div>
+	<div id="state" th:value="${skatepark.state}"></div>
+	<div id="country" th:value="${skatepark.country}"></div>
+	
+	<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+	<script
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABFqMSB0KJZ3pp8f-6dvGG1MoO10yVSBE&callback=initMap&libraries=&v=weekly"
+	async
+	></script>
+</body>
+</html>
