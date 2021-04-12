@@ -5,12 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-public class Skatepark {
+import com.nufsty2.skateatlas.model.BaseEntity;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+@Entity
+public class Skatepark extends BaseEntity {
 
 	private String name;
 
@@ -50,14 +48,6 @@ public class Skatepark {
 		this.country = country;
 		this.state = state;
 		this.website = website;
-	}
-
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getName() {

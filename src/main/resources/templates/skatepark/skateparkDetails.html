@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'skateparks')}">
+
+  <body>
+  
+  
+    <h2>Skatepark Information</h2>
+  
+  
+    <table class="table table-striped" th:object="${skatepark}">
+      <tr>
+        <th>Name</th>
+        <td><b th:text="*{name}"></b></td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td th:text="*{address}"></td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td th:text="*{city}"></td>
+      </tr>
+      <tr>
+        <th>Postal Code</th>
+        <td><b th:text="*{postalCode}"></b></td>
+      </tr>
+      <tr>
+        <th>Country</th>
+        <td th:text="*{country}"></td>
+      </tr>
+    </table>
+  
+    <a th:href="@{{id}/edit(id=${skatepark.id})}" class="btn btn-default">Edit
+      Skatepark</a>
+
+  </body>
+
+</html>
