@@ -9,19 +9,25 @@
     <table id="skateparks" class="table table-striped">
         <thead>
         <tr>
-            <th style="width: 150px;">Name</th>
-            <th style="width: 200px;">Address</th>
+            <th>Name</th>
             <th>City</th>
+            <th>State</th>
             <th>Country</th>
+			<th>Website</th>
         </tr>
         </thead>
         <tbody>
-          <tr th:each="skatepark : ${selections}">
-              <td th:text="${skatepark.name}"/>
-              <td th:text="${skatepark.address}"/>
-              <td th:text="${skatepark.city}"/>
-              <td th:text="${skatepark.country}"/>
-          </tr>
+			<tr th:each="skatepark : ${selections}">
+				<td>
+					<a th:href="@{/skateparks/__${skatepark.id}__}" th:text="${skatepark.name}"/></a>
+				</td>
+				<td th:text="${skatepark.city}"/>
+				<td th:text="${skatepark.state}"/>
+				<td th:text="${skatepark.country}"/>
+				<td>
+					<a th:href="${skatepark.website}" th:text="${skatepark.website}"/></a>
+				</td>
+			</tr>
         </tbody>
     </table>
 

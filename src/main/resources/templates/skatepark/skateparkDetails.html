@@ -15,24 +15,47 @@
         <td><b th:text="*{name}"></b></td>
       </tr>
       <tr>
-        <th>Address</th>
-        <td th:text="*{address}"></td>
-      </tr>
-      <tr>
         <th>City</th>
         <td th:text="*{city}"></td>
+      </tr>
+      <tr>
+        <th>State</th>
+        <td th:text="*{state}"></td>
+      </tr>
+      <tr>
+        <th>Country</th>
+        <td th:text="*{country}"></td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td th:text="*{address}"></td>
       </tr>
       <tr>
         <th>Postal Code</th>
         <td><b th:text="*{postalCode}"></b></td>
       </tr>
       <tr>
-        <th>Country</th>
-        <td th:text="*{country}"></td>
+        <th>Lights</th>
+        <td><b th:text="*{lights} ? 'Yes' : 'No'"></b></td>
+      </tr>
+      <tr>
+        <th>Free</th>
+        <td><b th:text="*{free} ? 'Yes' : 'No'"></b></td>
+      </tr>
+      <tr>
+        <th>Indoor</th>
+        <td><b th:text="*{inside} ? 'Yes' : 'No'"></b></td>
+      </tr>
+      <tr>
+        <th>Website</th>
+        <td><a th:href="*{website}" th:text="*{website}"></a></td>
       </tr>
     </table>
   
     <a th:href="@{{id}/edit(id=${skatepark.id})}" class="btn btn-default">Edit
+      Skatepark</a>
+
+    <a th:href="@{{id}/delete(id=${skatepark.id})}" class="btn btn-delete">Delete
       Skatepark</a>
 
   </body>

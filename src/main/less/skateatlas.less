@@ -13,9 +13,10 @@
  */
 @icon-font-path:    "../../webjars/bootstrap/fonts/";
 
-@skate-atlas-cyan:      #00adb5;
-@skate-atlas-dark-cyan: #006e74;
-@skate-atlas-dark:      #393e46;
+@skate-atlas-cyan:       #00adb5;
+@skate-atlas-red:        #c05459;
+@skate-atlas-dark-cyan:  #006e74;
+@skate-atlas-dark:       #393e46;
 @skate-atlas-grey:       #838789;
 @skate-atlas-light-grey: #f1f1f1;
 
@@ -39,6 +40,10 @@
 @btn-default-color:              @skate-atlas-light-grey;
 @btn-default-bg:                 @skate-atlas-dark;
 @btn-default-border:             @skate-atlas-cyan;
+
+@btn-delete-color:               @skate-atlas-light-grey;
+@btn-delete-bg:                  @skate-atlas-dark;
+@btn-delete-border:              @skate-atlas-red;
 
 @nav-tabs-active-link-hover-color:        @skate-atlas-light-grey;
 @nav-tabs-active-link-hover-bg:           @skate-atlas-dark;
@@ -81,6 +86,23 @@
   }
 }
 
+.btn-delete {
+  border-width: 2px;
+  transition: border 0.15s;
+  -webkit-transition: border 0.15s;
+  -moz-transition: border 0.15s;
+  -o-transition: border 0.15s;
+  -ms-transition: border 0.15s;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    background-color: @skate-atlas-dark;
+    border-color: @skate-atlas-dark;
+  }
+}
 
 .container .text-muted {
   margin: 20px 0;
