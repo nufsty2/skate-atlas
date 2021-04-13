@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.nufsty2</groupId>
 	<artifactId>skate-atlas</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>skate-atlas</name>
 	<description>Skatepark database using Spring</description>
 
