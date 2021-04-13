@@ -30,11 +30,12 @@
 			}
 
 			function geocodeAddress(geocoder, resultsMap) {
+				const name = document.getElementById("name").getAttribute("value");
 				const address = document.getElementById("address").getAttribute("value");
 				const city = document.getElementById("city").getAttribute("value");
 				const state = document.getElementById("state").getAttribute("value");
 				const country = document.getElementById("country").getAttribute("value");
-				const completeAddress = `${address}, ${city}, ${state}, ${country}`;
+				const completeAddress = `${name}, ${address}, ${city}, ${state}, ${country}`;
 				geocoder.geocode({ address: completeAddress }, (results, status) => {
 					if (status === "OK") {
 						resultsMap.setCenter(results[0].geometry.location);
@@ -43,7 +44,7 @@
 							position: results[0].geometry.location,
 						});
 					} else {
-						alert("Geocode was not successful for the following reason: " + status);
+						alert("Google Maps Geocode was not successful for the following reason: " + status);
 					}
 				});
 			}
@@ -54,6 +55,7 @@
 	<h3>Skatepark Location</h3>
 	<!--The div element for the map -->
 	<div id="map"></div>
+	<div id="name" th:value="${skatepark.name}"></div>
 	<div id="address" th:value="${skatepark.address}"></div>
 	<div id="city" th:value="${skatepark.city}"></div>
 	<div id="state" th:value="${skatepark.state}"></div>
