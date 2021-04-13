@@ -113,7 +113,7 @@ public class SkateparkController {
 	 */
 	@GetMapping("/skateparks/{id}")
 	public ModelAndView showSkatepark(@PathVariable("id") int id) {
-		ModelAndView mav = new ModelAndView("skatepark/skateparkdetails");
+		ModelAndView mav = new ModelAndView("skatepark/skateparkDetails");
 		Skatepark skatepark = this.skateparks.findById(id);
 		mav.addObject(skatepark);
 		return mav;
